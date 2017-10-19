@@ -1,12 +1,9 @@
 
-public class RocketSystem {
+public abstract class RocketSystem {
     
     public boolean nozzle[] = new boolean[4];    
     
-    public void ignite(int i,int pressure){
-    }
-    
-    public void shutoff(int i){
-    }
+    public abstract void  ignite(int i,int pressure);    
+    public abstract void shutoff(int i);
 
 }

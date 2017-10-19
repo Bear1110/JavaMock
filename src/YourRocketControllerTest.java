@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Assert;
 
-public class Test {
+public class YourRocketControllerTest {
     
     YourRocketController rc;
     RocketSystem rs;
@@ -36,8 +36,8 @@ public class Test {
 
     @org.junit.Test
     public void normalTest() {
-        rc.fireUp("IGNITE 0 1000 AT 0\nIGNITE 1 500 AT 2\nSHUTOFF 0 AT 5\nSHUTOFF 1 AT 6");
-        assertFalse(rs.nozzle[0]);
+        rc.fireUp("IGNITE 0 1000 AT 0\nIGNITE 1 500 AT 2\nSHUTOFF 0 AT 5\nSHUTOFF 1 AT 6\nIGNITE 0 1000 AT 8");
+        assertTrue(rs.nozzle[0]);        
         assertFalse(rs.nozzle[1]);
     }
 

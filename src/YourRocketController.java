@@ -22,14 +22,14 @@ public class YourRocketController {
        
        try {
            while (!threadExecutor.awaitTermination(1, TimeUnit.SECONDS)) {  
-               System.out.println("線程池沒有關閉");
+               //System.out.println("Thread is running!");
            }  
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
     
-    private boolean checkValue(int nozzle,int pressure,int atSecond){        
+    private boolean checkValue(int nozzle,int pressure,int atSecond){    
         
         if(nozzle < 0 || nozzle >3){
             System.out.println("nozzle number is wrong");
@@ -43,8 +43,7 @@ public class YourRocketController {
             System.out.println("Second is wrong");
             return false;
         }
-        return true;
-        
+        return true;        
     }
     
     public class workThread extends Thread {
@@ -77,7 +76,7 @@ public class YourRocketController {
             if(!checkValue(nozzle,pressure,atSecond)){
                 return;
             }
-            System.out.println(command+"一條指令開始 計"+ atSecond+"秒");
+            System.out.println(command+"指令 在"+ atSecond+"秒後 執行");
             try {
                 Thread.sleep(atSecond*1000);
             } catch (InterruptedException e) {
